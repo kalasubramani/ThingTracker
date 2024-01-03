@@ -1,6 +1,6 @@
 const pg = require("pg");
 //connect to db
-const client = new pg.Client("postgres://localhost/antiques_tracker");
+const client = new pg.Client(process.env.DATABASE_URL || "postgres://localhost/antiques_tracker");
 
 const seed = async () => {
    //seed db
@@ -10,7 +10,7 @@ const seed = async () => {
               id SERIAL PRIMARY KEY,
               name VARCHAR(100) UNIQUE
             );
-            DROP TABLE IF EXISTS antiques CASCADE;
+            DROP TABLE IF EXISTS antiques CASCADEa;
             CREATE TABLE IF NOT EXISTS antiques(
             id SERIAL PRIMARY KEY,
             name VARCHAR(100),
