@@ -10,7 +10,7 @@ const seed = async () => {
               id SERIAL PRIMARY KEY,
               name VARCHAR(100) UNIQUE
             );
-            DROP TABLE IF EXISTS antiques CASCADEa;
+            DROP TABLE IF EXISTS antiques CASCADE;
             CREATE TABLE IF NOT EXISTS antiques(
             id SERIAL PRIMARY KEY,
             name VARCHAR(100),
